@@ -8,7 +8,7 @@ public:
         int m = matrix[0].size();
         int max = INT_MIN;
         int dp[n+1][m+1][n+1][m+1] = {0};
-
+    
 
         for(int i1=1;i1<=n;i1++){
             for(int j1=1;j1<=m;j1++){
@@ -61,8 +61,33 @@ public:
             }
         }
         return maxm;
-
     }
+
+// 隔壁有完整代码
+// 在数组 arr 中，求不超过 k 的最大值
+    int dpmax_1(vector<int> arr, int k) {
+        int rollSum = arr[0], rollMax = rollSum;
+        // O(rows)
+        for (int i = 1; i < arr.size(); i++) {
+            if (rollSum > 0) rollSum += arr[i];
+            else rollSum = arr[i];
+            if (rollSum > rollMax) rollMax = rollSum;
+        }
+        if (rollMax <= k) return rollMax;
+        // O(rows ^ 2)
+        int max = INT_MIN;
+        for (int l = 0; l < arr.size(); l++) {
+            int sum = 0;
+            for (int r = l; r < arr.size(); r++) {
+                sum += arr[r];
+                if (sum > max && sum <= k) max = sum;
+                if (max == k) return k; // 尽量提前
+            }
+        }
+        return max;
+    }
+
+
 
     int maxSumSubmatrix_2(vector<vector<int>>& matrix, int k){
         int n = matrix.size();int m = matrix[0].size();
