@@ -1,7 +1,7 @@
 #include"head.h"
 class Solution {
 public:
-    int numDecodings(string s) {
+    int numDecodings(string s) {                                                        
         //该题关键在于，去加一和去继承
         //如果说发现能够独立成为一个数字，先让它继承s[i-1]的状态，发现能够和s[i-1]组成小于26的数字，那么再加一
         //怎么应对0的打扰
