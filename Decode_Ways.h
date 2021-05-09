@@ -23,4 +23,30 @@ public:
         }
         return dp[n%3];
     }
+    
+    public:
+    int sum = 0;
+    int numberOfArithmeticSlices_2(vector<int>& nums) {
+        int len=nums.size();
+        slices(nums, len-1);
+        return sum;
+    }
+    int slices(vector<int>& nums, int i){
+        //递归边界
+        if(i<2){
+            return 0;
+        }
+        int ap = 0;
+        if(nums[i] - nums[i-1] == nums[i-1]-nums[i-2]){
+            ap = 1+slices(nums, i-1);
+            sum += ap;
+        }
+        else{
+            slices(nums, i-1);
+        }
+        return ap;
+    }
+
+
+
 };
