@@ -2,14 +2,12 @@
 class Solution {
 public:
 //  暴力，动态规划
-
     int maxSumSubmatrix(vector<vector<int>>& matrix, int k) {
         int n =matrix.size();
         int m = matrix[0].size();
         int max = INT_MIN;
         int dp[n+1][m+1][n+1][m+1] = {0};
     
-
         for(int i1=1;i1<=n;i1++){
             for(int j1=1;j1<=m;j1++){
                 dp[i1][j1][i1][j1] = matrix[i1-1][j1-1];
@@ -33,7 +31,6 @@ public:
         int n = matrix.size(); int m = matrix[0].size();
         int max = INT_MIN;
         // int dp[n+1][m+1] = {0};
-
         for(int i1 =1;i1<=n;i1++){
             for(int j1=1;j1<=m;j1++){
                 vector<vector<int>> dp(n+1,vector<int>(m+1,0));     
@@ -65,7 +62,7 @@ public:
 
 // 隔壁有完整代码
 // 在数组 arr 中，求不超过 k 的最大值
-    int dpmax_1(vector<int> arr, int k) {
+    int dpmax_1(vector<int>& arr, int k) {
         int rollSum = arr[0], rollMax = rollSum;
         // O(rows)
         for (int i = 1; i < arr.size(); i++) {
@@ -90,7 +87,7 @@ public:
 
 
     int maxSumSubmatrix_2(vector<vector<int>>& matrix, int k){
-        int n = matrix.size();int m = matrix[0].size();
+        int n = matrix.size();int m = matrix[0].size(); 
         int maxm = INT_MIN;
         for(int l=0;l<m;l++){
             vector<int> b(n,0);
@@ -98,7 +95,7 @@ public:
                 for(int j=0;j<n;j++){
                     b[j] += matrix[j][r];
                 }
-                maxm = max(maxm, dpmax(b,k));
+                maxm = max(maxm, dpmax_1(b,k));
             }
         }
         return maxm;
