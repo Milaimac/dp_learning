@@ -1,4 +1,5 @@
 #include"head.h"
+//1027. 最长等差数列
 class Solution {
 public:
     int longestArithSeqLength(vector<int>& A) {
