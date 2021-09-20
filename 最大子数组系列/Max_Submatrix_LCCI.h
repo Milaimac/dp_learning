@@ -1,5 +1,9 @@
 // 最大子矩阵
-#include"head.h"
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<bits/stdc++.h> //INT_MIN,INT_MAX
+using namespace std;
 /*
 本题思路：
 这道题和最大子序和的思想是一致的。

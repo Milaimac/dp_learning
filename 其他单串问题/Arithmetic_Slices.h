@@ -1,4 +1,8 @@
-#include"head.h"
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<bits/stdc++.h> //INT_MIN,INT_MAX
+using namespace std;
 class Solution {
 public:
 //暴力法，直接计算从s(start) 到e(end)的d是否符合，如果能到e，则可行。

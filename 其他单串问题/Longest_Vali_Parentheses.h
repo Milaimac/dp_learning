@@ -1,5 +1,9 @@
 // 最长有效括号
-#include"head.h"
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<bits/stdc++.h> //INT_MIN,INT_MAX
+using namespace std;
 class Solution {
 public:
     //动态规划版本， 该题要求的回答的是最长括号的长度，所以我们只要考虑连续状态下括号的长度。

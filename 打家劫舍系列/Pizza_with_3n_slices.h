@@ -1,4 +1,8 @@
-#include"head.h"
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<bits/stdc++.h> //INT_MIN,INT_MAX
+using namespace std;
 class Solution{
 public:
 //  该题和打家劫舍二不同的地方在于，选完之后的东西的左右会消失掉。

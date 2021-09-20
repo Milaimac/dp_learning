@@ -1,4 +1,6 @@
-#include"head.h"
+#include <vector>
+#include <algorithm>
+using namespace std;
 // 相较于最长递增序列的那道题而言，该题还需要加个数组将最长递增序列的数量的状态也给存储出来。
 // 这里使用counter
 class Solution {
